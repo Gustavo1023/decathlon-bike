@@ -25,6 +25,6 @@ jobs:
         run: |
           echo "$KEY" > ./chave.pem
           chmod 600 ./chave.pem
-          scp -i ./chave.pem arquivo2.txt ec2-user@52.87.7.130:/mnt/efs
+          scp -i ./chave.pem images/** ec2-user@52.87.7.130:/mnt/efs
         env:
           KEY: ${{ secrets.CHAVE_PEM }}
